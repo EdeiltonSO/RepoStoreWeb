@@ -25,7 +25,9 @@ function App() {
   }
 
   async function handleRemoveRepository(id) {
-    // TODO
+    await api.delete(`repositories/${id}`);
+    const repo = document.getElementById(id);
+    repo.parentNode.removeChild(repo);
   }
 
   return (
